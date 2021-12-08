@@ -1,12 +1,5 @@
 version: 2
 
-metrics:
-  - name: average_sales
-    label: Average sales
-    model: orders
-    type: average
-    sql: amount
-
 models:
   - name: orders
     description: >
