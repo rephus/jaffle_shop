@@ -2,18 +2,34 @@ version: 2
 
 models:
   - name: orders
-    description: This table has basic information about orders, as well as some derived facts based on payments
+    description: >
+      This table has basic information about orders
 
     columns:
       - name: order_id
-        tests:
-          - unique
-          - not_null
         description: This is a unique identifier for an order
+
         meta:
           metrics:
             unique_order_count:
               type: count_distinct
+
+      - name: amount
+        description: Total amount (AUD) of the order
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       - name: is_completed
         description: Boolean indicating if status is completed
@@ -40,15 +56,6 @@ models:
         tests:
           - accepted_values:
               values: ['placed', 'shipped', 'completed', 'return_pending', 'returned']
-
-      - name: amount
-        description: Total amount (AUD) of the order
-        tests:
-          - not_null
-        meta:
-          metrics:
-            avg_amount:
-              type: average
 
       - name: credit_card_amount
         description: Amount of the order (AUD) paid for by credit card
