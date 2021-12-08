@@ -1,5 +1,12 @@
 version: 2
 
+metrics:
+  - name: total_sales
+    label: Total sales
+    model: orders
+    sql: amount
+    type: sum
+
 models:
   - name: orders
     description: >
@@ -30,7 +37,6 @@ models:
 
 
 
-
       - name: is_completed
         description: Boolean indicating if status is completed
 
@@ -44,7 +50,7 @@ models:
 
       - name: order_date
         description: Date (UTC) that the order was placed
-        
+
       - name: status
         description: '{{ doc("orders_status") }}'
         tests:
