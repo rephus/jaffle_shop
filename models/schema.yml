@@ -1,5 +1,12 @@
 version: 2
 
+metrics:
+  - name: average_sales
+    label: Average sales
+    model: orders
+    type: average
+    sql: amount
+
 models:
   - name: orders
     description: >
@@ -11,7 +18,7 @@ models:
 
         meta:
           metrics:
-            unique_order_count:
+            total_orders:
               type: count_distinct
 
       - name: amount
