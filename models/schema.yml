@@ -44,13 +44,7 @@ models:
 
       - name: order_date
         description: Date (UTC) that the order was placed
-        meta:
-          metrics:
-            date_of_first_order:
-              type: min
-            date_of_most_recent_order:
-              type: max
-
+        
       - name: status
         description: '{{ doc("orders_status") }}'
         tests:
