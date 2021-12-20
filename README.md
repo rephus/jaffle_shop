@@ -20,7 +20,7 @@ cd lightdash
 
 ### warehouse connection:
 
-First follow [these instructions](./docker/README.md) to run a postgres database for this jaffle shop project.
+First follow [these instructions](dbt/docker/README.md) to run a postgres database for this jaffle shop project.
 
 - type: postgres
 - host: host.docker.internal
@@ -52,7 +52,7 @@ This repo contains [seeds](https://docs.getdbt.com/docs/building-a-dbt-project/s
 
 The raw data consists of customers, orders, and payments, with the following entity-relationship diagram:
 
-![Jaffle Shop ERD](/etc/jaffle_shop_erd.png)
+![Jaffle Shop ERD](/dbt/etc/jaffle_shop_erd.png)
 
 
 ### Running this project
