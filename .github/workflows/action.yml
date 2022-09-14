@@ -1,5 +1,5 @@
 
-name: CI
+name: deploy-lightdash
 
 on:
   push:
@@ -23,9 +23,7 @@ jobs:
       - name: Copy profiles.yml
         env:
           config: ${{ secrets.DBT_PROFILES }}          
-        run: |
-          mkdir -p $HOME/.dbt
-          echo -e "$config" > $HOME/.dbt/profiles.yml      
+        run: echo -e "$config" > profiles.yml      
 
       - name: Installs dbt
         run: pip install dbt-core dbt-postgres dbt-redshift dbt-snowflake dbt-bigquery
@@ -46,4 +44,6 @@ jobs:
           LIGHTDASH_PROJECT: ${{ secrets.LIGHTDASH_PROJECT }}          
           LIGHTDASH_URL: ${{ secrets.LIGHTDASH_URL }}          
 
-        run: lightdash deploy --project-dir .
+        run: |
+          lightdash generate -y --project-dir . --profiles-dir .
+          lightdash deploy --project-dir . --profiles-dir .
