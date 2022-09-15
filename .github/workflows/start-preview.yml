@@ -2,8 +2,8 @@
 name: start-preview
 
 on:
-  pull_request:
-    types: [opened, edited]
+  push:
+    branches-ignore: [ "main", "master" ]
 
 jobs:
   preview:
@@ -25,7 +25,7 @@ jobs:
         run: pip install dbt-core dbt-postgres dbt-redshift dbt-snowflake dbt-bigquery
 
       - name: Install lightdash CLI
-        run: npm install -g @lightdash/cli
+        run: npm install -g @lightdash/cli@0.254.0-rc1
 
       - name: Lightdash CLI deploy 
         env:
