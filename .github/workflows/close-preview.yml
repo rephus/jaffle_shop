@@ -3,7 +3,7 @@ name: close-preview
 
 on:
   pull_request:
-    types: [close]
+    types: [closed, merged]
 
 jobs:
   preview:

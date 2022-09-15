@@ -27,8 +27,6 @@ jobs:
       - name: Install lightdash CLI
         run: npm install -g @lightdash/cli@0.254.0-rc1
 
-      - name: show env 
-        run: env 
       - name: Lightdash CLI deploy 
         env:
           LIGHTDASH_API_KEY: ${{ secrets.LIGHTDASH_API_KEY }}          
