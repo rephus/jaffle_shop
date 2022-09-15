@@ -1,0 +1,38 @@
+
+name: start-preview
+
+on:
+  pull_request:
+    types: [opened, edited]
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3.4.1
+      - uses: actions/setup-python@v1
+        with:
+          python-version: "3.7.x"
+
+      - name: Copy profiles.yml
+        env:
+          config: ${{ secrets.DBT_PROFILES }}          
+        run: echo -e "$config" > profiles.yml      
+
+      - name: Install dbt
+        run: pip install dbt-core dbt-postgres dbt-redshift dbt-snowflake dbt-bigquery
+
+      - name: Install lightdash CLI
+        run: npm install -g @lightdash/cli
+
+      - name: Lightdash CLI deploy 
+        env:
+          LIGHTDASH_API_KEY: ${{ secrets.LIGHTDASH_API_KEY }}          
+          LIGHTDASH_PROJECT: ${{ secrets.LIGHTDASH_PROJECT }}          
+          LIGHTDASH_URL: ${{ secrets.LIGHTDASH_URL }}          
+
+        run:  lightdash start-preview --project-dir . --profiles-dir . --name $GITHUB_HEAD_REF
+
+
