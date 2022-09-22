@@ -15,8 +15,8 @@ jobs:
       - uses: actions/setup-python@v1
         with:
           python-version: "3.7.x"
-      - uses: sergeysova/jq-action@v2
       - name: Get lightdash version 
+        uses: sergeysova/jq-action@v2
         id: version 
         env:
           LIGHTDASH_URL: ${{ secrets.LIGHTDASH_URL }}   
