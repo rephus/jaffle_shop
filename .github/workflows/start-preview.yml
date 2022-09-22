@@ -20,7 +20,8 @@ jobs:
         id: version 
         env:
           LIGHTDASH_URL: ${{ secrets.LIGHTDASH_URL }}   
-        run: curl -s "${LIGHTDASH_URL}/api/v1/health" | jq -r '.results.version'
+        with: 
+          cmd: curl -s "${LIGHTDASH_URL}/api/v1/health" | jq -r '.results.version'
       - name: echo version 
         env:
           version: ${{ steps.version.outputs.value }}   
