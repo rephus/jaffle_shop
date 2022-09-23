@@ -5,8 +5,6 @@ on:
   push:
     branches: [ "main", "master" ]
 
-  workflow_dispatch:
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -26,8 +24,8 @@ jobs:
       - name: Install dbt
         run: |
           pip install dbt-core dbt-postgres dbt-redshift dbt-snowflake dbt-bigquery
-          dbt --project-dir . deps
-          
+          dbt deps --project-dir . 
+
       - name: Install lightdash CLI
         run: npm install -g @lightdash/cli
 
@@ -37,4 +35,4 @@ jobs:
           LIGHTDASH_PROJECT: ${{ secrets.LIGHTDASH_PROJECT }}          
           LIGHTDASH_URL: ${{ secrets.LIGHTDASH_URL }}          
 
-        run:  lightdash deploy --project-dir . --profiles-dir .
+        run: lightdash deploy --project-dir . --profiles-dir .
