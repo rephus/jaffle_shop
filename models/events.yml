@@ -32,13 +32,11 @@ models:
         meta:
           dimension:
             type: timestamp
-            group_label: "Timestamp NTZ LTZ"
       - name: timestamp_ltz
         description: ""
         meta:
           dimension:
             type: timestamp
-            group_label: "Timestamp NTZ LTZ"
       - name: date
         description: ""
         meta:
@@ -52,6 +50,7 @@ models:
         meta:
           dimension:
             type: string
+            group_label: 'Events'
           metrics:
             count:
               type: count
@@ -60,6 +59,7 @@ models:
         meta:
           dimension:
             type: number
+            group_label: 'Events'
           metrics:
             in_gbp:
               type: sum
