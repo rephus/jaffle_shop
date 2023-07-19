@@ -32,11 +32,13 @@ models:
         meta:
           dimension:
             type: timestamp
+            group_label: "Timestamp NTZ LTZ"
       - name: timestamp_ltz
         description: ""
         meta:
           dimension:
             type: timestamp
+            group_label: "Timestamp NTZ LTZ"
       - name: date
         description: ""
         meta:
