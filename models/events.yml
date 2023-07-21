@@ -50,6 +50,7 @@ models:
         meta:
           dimension:
             type: string
+            group_label: 'Events'
           metrics:
             count:
               type: count
@@ -58,6 +59,7 @@ models:
         meta:
           dimension:
             type: number
+            group_label: 'Events'
           metrics:
             in_gbp:
               type: sum
