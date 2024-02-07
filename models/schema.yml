@@ -14,24 +14,34 @@ metrics:
     sql: order_id
     filters:
       - field: is_completed
-        operator: '='
-        value: 'true'
+        operator: "="
+        value: "true"
 models:
   - name: customers
     description: >-
       This table has basic information about a customer, as well as some derived
       facts based on a customer's orders
     columns:
-      - name: customer_id
+      customer_id:
+        name: customer_id
         description: This is a unique identifier for a customer
         tests:
           - unique
           - not_null
-      - name: first_name
+      first_name:
+        name: first_name
         description: Customer's first name. PII.
-      - name: last_name
+        meta:
+          metrics:
+            first_name_count_distinct_of_first_name:
+              label: Count distinct of First name
+              description: "Count distinct of First name on the table Customers "
+              type: count_distinct
+      last_name:
+        name: last_name
         description: Customer's last name. PII.
-      - name: created
+      created:
+        name: created
         description: Timestamp (UTC) when customer was created
         meta:
           metrics:
@@ -39,34 +49,40 @@ models:
               type: min
             date_of_most_recent_created_customer:
               type: max
-      - name: first_order
+      first_order:
+        name: first_order
         description: Date of the customers first order
         meta:
           dimension:
             hidden: true
-      - name: most_recent_order
+      most_recent_order:
+        name: most_recent_order
         description: Date of the customers most recent order
         meta:
           dimension:
             hidden: true
-      - name: days_since_last_order
+      days_since_last_order:
+        name: days_since_last_order
         description: Number of days since the customers last order
         meta:
           dimension:
             hidden: true
-      - name: days_between_created_and_first_order
+      days_between_created_and_first_order:
+        name: days_between_created_and_first_order
         description: >-
           Number of days between the customer being created and making their
           first order
         meta:
           dimension:
             hidden: true
-      - name: number_of_orders
+      number_of_orders:
+        name: number_of_orders
         description: ""
         meta:
           dimension:
             hidden: true
-      - name: customer_lifetime_value
+      customer_lifetime_value:
+        name: customer_lifetime_value
         description: ""
         meta:
           dimension:
