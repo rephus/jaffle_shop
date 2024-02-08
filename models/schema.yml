@@ -62,12 +62,12 @@ models:
           dimension:
             hidden: true
       - name: number_of_orders
-        description: ""
+        description: ''
         meta:
           dimension:
             hidden: true
       - name: customer_lifetime_value
-        description: ""
+        description: ''
         meta:
           dimension:
             hidden: true
@@ -114,7 +114,7 @@ models:
             date_of_most_recent_order:
               type: max
       - name: status
-        description: "{{ doc(\"orders_status\") }}"
+        description: '{{ doc("orders_status") }}'
         tests:
           - accepted_values:
               values:
@@ -194,3 +194,7 @@ models:
             total_revenue:
               type: sum
               description: Sum of all payments
+            amount_count_distinct_of_amount:
+              label: Count distinct of Amount
+              description: 'Count distinct of Amount on the table Payments '
+              type: count_distinct
