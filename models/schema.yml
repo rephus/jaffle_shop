@@ -29,6 +29,12 @@ models:
           - not_null
       - name: first_name
         description: Customer's first name. PII.
+        meta:
+          metrics:
+            first_name_count_distinct_of_first_name:
+              label: Count distinct of First name
+              description: 'Count distinct of First name on the table Customers '
+              type: count_distinct
       - name: last_name
         description: Customer's last name. PII.
       - name: created
@@ -62,12 +68,12 @@ models:
           dimension:
             hidden: true
       - name: number_of_orders
-        description: ""
+        description: ''
         meta:
           dimension:
             hidden: true
       - name: customer_lifetime_value
-        description: ""
+        description: ''
         meta:
           dimension:
             hidden: true
@@ -114,7 +120,7 @@ models:
             date_of_most_recent_order:
               type: max
       - name: status
-        description: "{{ doc(\"orders_status\") }}"
+        description: '{{ doc("orders_status") }}'
         tests:
           - accepted_values:
               values:
