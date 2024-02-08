@@ -14,8 +14,8 @@ metrics:
     sql: order_id
     filters:
       - field: is_completed
-        operator: '='
-        value: 'true'
+        operator: "="
+        value: "true"
 models:
   - name: customers
     description: >-
@@ -29,6 +29,12 @@ models:
           - not_null
       - name: first_name
         description: Customer's first name. PII.
+        meta:
+          metrics:
+            first_name_count_distinct_of_first_name:
+              label: Count distinct of First name
+              description: "Count distinct of First name on the table Customers "
+              type: count_distinct
       - name: last_name
         description: Customer's last name. PII.
       - name: created
