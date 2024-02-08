@@ -200,3 +200,7 @@ models:
             total_revenue:
               type: sum
               description: Sum of all payments
+            amount_count_distinct_of_amount:
+              label: Count distinct of Amount
+              description: "Count distinct of Amount on the table Payments "
+              type: count_distinct
