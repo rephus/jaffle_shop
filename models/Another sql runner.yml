@@ -1,0 +1,18 @@
+version: 2
+models:
+  - name: Another sql runner
+    label: another sql runner
+    description: SQL model for another sql runner
+    columns:
+      - name: order_id
+        meta:
+          dimension:
+            type: number
+      - name: order_date
+        meta:
+          dimension:
+            type: date
+      - name: status
+        meta:
+          dimension:
+            type: string
