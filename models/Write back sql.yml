@@ -1,0 +1,18 @@
+version: 2
+models:
+  - name: Write back sql
+    label: write back sql
+    description: SQL model for write back sql
+    columns:
+      - name: order_id
+        meta:
+          dimension:
+            type: number
+      - name: order_date
+        meta:
+          dimension:
+            type: date
+      - name: status
+        meta:
+          dimension:
+            type: string
