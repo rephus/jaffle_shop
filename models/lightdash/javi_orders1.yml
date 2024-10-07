@@ -1,0 +1,46 @@
+version: 2
+models:
+  - name: javi_orders1
+    label: Javi orders 1
+    description: SQL model for Javi orders 1
+    columns:
+      - name: order_id
+        meta:
+          dimension:
+            type: number
+      - name: customer_id
+        meta:
+          dimension:
+            type: number
+      - name: order_date
+        meta:
+          dimension:
+            type: date
+      - name: status
+        meta:
+          dimension:
+            type: string
+      - name: is_completed
+        meta:
+          dimension:
+            type: boolean
+      - name: credit_card_amount
+        meta:
+          dimension:
+            type: number
+      - name: coupon_amount
+        meta:
+          dimension:
+            type: number
+      - name: bank_transfer_amount
+        meta:
+          dimension:
+            type: number
+      - name: gift_card_amount
+        meta:
+          dimension:
+            type: number
+      - name: amount
+        meta:
+          dimension:
+            type: number
