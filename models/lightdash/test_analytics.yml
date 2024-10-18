@@ -1,0 +1,50 @@
+version: 2
+models:
+  - name: test_analytics
+    label: Test analytics
+    description: SQL model for Test analytics
+    columns:
+      - name: customer_id
+        meta:
+          dimension:
+            type: number
+      - name: first_name
+        meta:
+          dimension:
+            type: string
+      - name: last_name
+        meta:
+          dimension:
+            type: string
+      - name: age
+        meta:
+          dimension:
+            type: number
+      - name: created
+        meta:
+          dimension:
+            type: timestamp
+      - name: first_order
+        meta:
+          dimension:
+            type: date
+      - name: most_recent_order
+        meta:
+          dimension:
+            type: date
+      - name: number_of_orders
+        meta:
+          dimension:
+            type: number
+      - name: customer_lifetime_value
+        meta:
+          dimension:
+            type: number
+      - name: days_between_created_and_first_order
+        meta:
+          dimension:
+            type: number
+      - name: days_since_last_order
+        meta:
+          dimension:
+            type: number
