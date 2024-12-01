@@ -1,0 +1,18 @@
+version: 2
+models:
+  - name: write_back_sql8
+    label: Write back sql 8
+    description: SQL model for friendlyName(write back sql8)
+    columns:
+      - name: order_id
+        meta:
+          dimension:
+            type: number
+      - name: order_date
+        meta:
+          dimension:
+            type: date
+      - name: status
+        meta:
+          dimension:
+            type: string
