@@ -1,3 +1,4 @@
+# This metric specification has been deprecated for a long time
 version: 2
 metrics:
   - name: unique_customer_count
