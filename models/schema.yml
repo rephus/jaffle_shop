@@ -14,8 +14,8 @@ metrics:
     sql: order_id
     filters:
       - field: is_completed
-        operator: '='
-        value: 'true'
+        operator: "="
+        value: "true"
 models:
   - name: customers
     description: >-
@@ -98,6 +98,10 @@ models:
               format: percent
               round: 1
               sql: CASE WHEN ${is_completed} THEN 1 ELSE 0 END
+            is_completed_count_distinct_of_is_completed:
+              label: Count distinct of Is completed
+              description: "Count distinct of Is completed on the table Orders "
+              type: count_distinct
       - name: customer_id
         description: Foreign key to the customers table
         tests:
