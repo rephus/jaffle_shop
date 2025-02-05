@@ -14,8 +14,8 @@ metrics:
     sql: order_id
     filters:
       - field: is_completed
-        operator: '='
-        value: 'true'
+        operator: "="
+        value: "true"
 models:
   - name: customers
     description: >-
@@ -105,6 +105,12 @@ models:
           - relationships:
               to: ref('customers')
               field: customer_id
+        meta:
+          metrics:
+            customer_id_count_distinct_of_customer_id:
+              label: Count distinct of Customer id
+              description: "Count distinct of Customer id on the table Orders "
+              type: count_distinct
       - name: order_date
         description: Date (UTC) that the order was placed
         meta:
