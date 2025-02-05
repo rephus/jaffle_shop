@@ -14,8 +14,8 @@ metrics:
     sql: order_id
     filters:
       - field: is_completed
-        operator: '='
-        value: 'true'
+        operator: "="
+        value: "true"
 models:
   - name: customers
     description: >-
@@ -27,6 +27,12 @@ models:
         tests:
           - unique
           - not_null
+        meta:
+          metrics:
+            customer_id_sum_of_customer_id:
+              label: Sum of Customer id
+              description: "Sum of Customer id on the table Customers "
+              type: sum
       - name: first_name
         description: Customer's first name. PII.
       - name: last_name
