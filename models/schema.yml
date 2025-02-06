@@ -14,8 +14,8 @@ metrics:
     sql: order_id
     filters:
       - field: is_completed
-        operator: '='
-        value: 'true'
+        operator: "="
+        value: "true"
 models:
   - name: customers
     description: >-
@@ -183,6 +183,10 @@ models:
             unique_payment_count:
               type: count_distinct
               description: count of all payments
+            payment_id_sum_of_payment_id:
+              label: Sum of Payment id
+              description: "Sum of Payment id on the table Payments "
+              type: sum
       - name: order_id
         description: Foreign key to the orders table
       - name: payment_method
