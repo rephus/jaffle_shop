@@ -14,8 +14,8 @@ metrics:
     sql: order_id
     filters:
       - field: is_completed
-        operator: '='
-        value: 'true'
+        operator: "="
+        value: "true"
 models:
   - name: customers
     description: >-
@@ -185,6 +185,12 @@ models:
               description: count of all payments
       - name: order_id
         description: Foreign key to the orders table
+        meta:
+          metrics:
+            order_id_count_distinct_of_order_id:
+              label: Count distinct of Order id
+              description: "Count distinct of Order id on the table Payments "
+              type: count_distinct
       - name: payment_method
         description: Method of payment used, for example credit card
       - name: amount
