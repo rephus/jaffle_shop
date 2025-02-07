@@ -86,6 +86,11 @@ models:
           metrics:
             unique_order_count:
               type: count_distinct
+            order_id_sum_of_order_id:
+              label: Sum of Order id
+              description: "Sum of Order id on the table Orders "
+              type: sum
+              filters: []
       - name: is_completed
         description: Boolean indicating if status is completed
         meta:
