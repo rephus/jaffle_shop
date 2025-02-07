@@ -91,6 +91,12 @@ models:
               description: "Sum of Order id on the table Orders "
               type: sum
               filters: []
+            order_id_min_of_order_id:
+              label: Min of Order id
+              description: Min of Order id on the table Orders with filters orders.order_id
+              type: min
+              filters:
+                - order_id: "5"
       - name: is_completed
         description: Boolean indicating if status is completed
         meta:
