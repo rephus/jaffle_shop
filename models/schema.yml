@@ -16,12 +16,16 @@ models:
           dimension:
             type: string
             urls:
-              - label: "URL from value"
-                url: "https://example.com/company/${value.formatted | url_encode }"
-              - label: "URL from row value"
-                url: "https://example.com/company/${row.customers.customer_id.raw | url_encode }"
-              - label: "Invalid URL with bad reference"
-                url: "https://example.com/company/${row.customer_id.raw | url_encode }"
+              - label: URL from value
+                url: https://example.com/company/${value.formatted | url_encode }
+              - label: URL from row value
+                url: >-
+                  https://example.com/company/${row.customers.customer_id.raw |
+                  url_encode }
+              - label: Invalid URL with bad reference
+                url: >-
+                  https://example.com/company/${row.customer_id.raw | url_encode
+                  }
       - name: last_name
         description: Customer's last name. PII.
       - name: created
@@ -101,6 +105,12 @@ models:
           - relationships:
               to: ref('customers')
               field: customer_id
+        meta:
+          metrics:
+            customer_id_count_distinct_of_customer_id:
+              label: Count distinct of Customer id
+              description: "Count distinct of Customer id on the table Orders "
+              type: count_distinct
       - name: order_date
         description: Date (UTC) that the order was placed
         meta:
