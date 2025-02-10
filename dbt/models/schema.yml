@@ -10,6 +10,13 @@ models:
         tests:
           - unique
           - not_null
+        meta:
+          metrics:
+            customer_id_count_of_customer_id:
+              label: Count of Customer id
+              description: "Count of Customer id on the table Customers "
+              type: count
+              filters: []
       - name: first_name
         description: Customer's first name. PII.
         meta:
@@ -90,6 +97,12 @@ models:
               label: Sum of Order id
               description: "Sum of Order id on the table Orders "
               type: sum
+              filters: []
+            order_id_average_of_order_id:
+              label: Average of Order id
+              description: "Average of Order id on the table Orders "
+              type: average
+              round: 2
               filters: []
       - name: is_completed
         description: Boolean indicating if status is completed
