@@ -10,6 +10,12 @@ models:
         tests:
           - unique
           - not_null
+        meta:
+          metrics:
+            customer_id_count_of_customer_id:
+              label: Count of Customer id
+              description: "Count of Customer id on the table Customers "
+              type: count
       - name: first_name
         description: Customer's first name. PII.
         meta:
