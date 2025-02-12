@@ -95,14 +95,14 @@ models:
               label: weird format
               description: "Min of Min of Order id on the table Orders "
               type: min
-              format: "\"_my test_\"#,##0.0000000000,\"K\"\" !!??\""
-              filters: []
+              round: 10
+              compact: thousands
             order_id_copy_min_of_order_id:
               label: Copy Min of Order id
               description: "Min of Copy Min of Order id on the table Orders "
               type: min
-              format: "#,##0.000%"
-              filters: []
+              round: 3
+              format: percent
       - name: is_completed
         description: Boolean indicating if status is completed
         meta:
