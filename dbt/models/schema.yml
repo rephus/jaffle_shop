@@ -101,8 +101,8 @@ models:
               label: Copy Min of Order id
               description: "Min of Copy Min of Order id on the table Orders "
               type: min
-              format: "#,##0.000%"
-              filters: []
+              round: 3
+              format: percent
       - name: is_completed
         description: Boolean indicating if status is completed
         meta:
