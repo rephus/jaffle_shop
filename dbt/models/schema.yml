@@ -91,6 +91,18 @@ models:
               description: "Sum of Order id on the table Orders "
               type: sum
               filters: []
+            order_id_min_of_order_id:
+              label: Min of Order id
+              description: "Min of Min of Order id on the table Orders "
+              type: min
+              format: "[$£]#,##0.000,\"K\""
+              filters: []
+            order_id_copy_min_of_order_id:
+              label: Copy Min of Order id
+              description: "Min of Copy Min of Order id on the table Orders "
+              type: min
+              format: "#,##0.000%"
+              filters: []
       - name: is_completed
         description: Boolean indicating if status is completed
         meta:
