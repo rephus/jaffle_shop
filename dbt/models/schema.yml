@@ -146,6 +146,12 @@ models:
                 - completed
                 - return_pending
                 - returned
+        meta:
+          additional_dimensions:
+            is_status_completed:
+              label: Is status completed
+              type: boolean
+              sql: ${orders.status} = 'completed'
       - name: amount
         description: Total amount (USD) of the order
         tests:
