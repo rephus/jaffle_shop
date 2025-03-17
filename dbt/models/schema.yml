@@ -103,6 +103,11 @@ models:
               type: min
               format: "#,##0.000%"
               filters: []
+          additional_dimensions:
+            radnom_c_m:
+              label: Radnom c m
+              type: number
+              sql: RANDOM()
       - name: is_completed
         description: Boolean indicating if status is completed
         meta:
