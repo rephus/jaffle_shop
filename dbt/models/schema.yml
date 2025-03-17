@@ -91,6 +91,23 @@ models:
               description: "Sum of Order id on the table Orders "
               type: sum
               filters: []
+            order_id_weird_format:
+              label: weird format
+              description: "Min of Min of Order id on the table Orders "
+              type: min
+              format: "\"_my test_\"#,##0.0000000000,\"K\"\" !!??\""
+              filters: []
+            order_id_copy_min_of_order_id:
+              label: Copy Min of Order id
+              description: "Min of Copy Min of Order id on the table Orders "
+              type: min
+              format: "#,##0.000%"
+              filters: []
+          additional_dimensions:
+            radnom_c_m:
+              label: Radnom c m
+              type: number
+              sql: RANDOM()
       - name: is_completed
         description: Boolean indicating if status is completed
         meta:
@@ -134,6 +151,12 @@ models:
                 - completed
                 - return_pending
                 - returned
+        meta:
+          additional_dimensions:
+            is_status_completed:
+              label: Is status completed
+              type: boolean
+              sql: ${orders.status} = 'completed'
       - name: amount
         description: Total amount (USD) of the order
         tests:
