@@ -225,6 +225,13 @@ models:
               description: count of all payments
       - name: order_id
         description: Foreign key to the orders table
+        meta:
+          metrics:
+            order_id_median_of_order_id:
+              label: Median of Order id
+              description: "Median of Order id on the table Payments "
+              type: median
+              filters: []
       - name: payment_method
         description: Method of payment used, for example credit card
       - name: amount
