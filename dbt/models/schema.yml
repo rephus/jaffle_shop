@@ -103,6 +103,16 @@ models:
               type: min
               format: "#,##0.000%"
               filters: []
+            order_id_min_of_order_id:
+              label: Min of Order id
+              description: "Min of Order id on the table Orders "
+              type: min
+              filters: []
+            order_id_max_of_order_id:
+              label: Max of Order id
+              description: "Max of Order id on the table Orders "
+              type: max
+              filters: []
       - name: is_completed
         description: Boolean indicating if status is completed
         meta:
