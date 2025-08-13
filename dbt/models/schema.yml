@@ -103,6 +103,11 @@ models:
               type: min
               format: "#,##0.000%"
               filters: []
+            order_id_median_of_order_id:
+              label: Median of Order id
+              description: "Median of Order id on the table Orders "
+              type: median
+              filters: []
       - name: is_completed
         description: Boolean indicating if status is completed
         meta:
