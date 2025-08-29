@@ -152,6 +152,12 @@ models:
               label: Is status completed
               type: boolean
               sql: ${orders.status} = 'completed'
+          metrics:
+            status_count_distinct_of_status:
+              label: Count distinct of Status
+              description: "Count distinct of Status on the table Orders "
+              type: count_distinct
+              filters: []
       - name: amount
         description: Total amount (USD) of the order
         tests:
