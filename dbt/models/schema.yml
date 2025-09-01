@@ -103,6 +103,11 @@ models:
               type: min
               format: "#,##0.000%"
               filters: []
+            order_id_max_of_order_id:
+              label: Max of Order id
+              description: "Max of Order id on the table Orders "
+              type: max
+              filters: []
       - name: is_completed
         description: Boolean indicating if status is completed
         meta:
@@ -152,6 +157,12 @@ models:
               label: Is status completed
               type: boolean
               sql: ${orders.status} = 'completed'
+          metrics:
+            status_count_distinct_of_status:
+              label: Count distinct of Status
+              description: "Count distinct of Status on the table Orders "
+              type: count_distinct
+              filters: []
       - name: amount
         description: Total amount (USD) of the order
         tests:
