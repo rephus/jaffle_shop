@@ -163,6 +163,12 @@ models:
               description: "Count distinct of Status on the table Orders "
               type: count_distinct
               filters: []
+            status_max_of_status:
+              label: Max of Status
+              description: Max of Status on the table Orders with filters orders.status
+              type: max
+              filters:
+                - status: completed
       - name: amount
         description: Total amount (USD) of the order
         tests:
