@@ -10,6 +10,13 @@ models:
         tests:
           - unique
           - not_null
+        config:
+          meta:
+            additional_dimensions:
+              random:
+                label: Random
+                type: number
+                sql: "    random()"
       - name: first_name
         description: Customer's first name. PII.
         meta:
