@@ -108,6 +108,11 @@ models:
               description: "Max of Order id on the table Orders "
               type: max
               filters: []
+            order_id_max_of_order_id2:
+              label: Max of Order id2
+              description: "Max of Order id on the table Orders "
+              type: max
+              filters: []
       - name: is_completed
         description: Boolean indicating if status is completed
         meta:
